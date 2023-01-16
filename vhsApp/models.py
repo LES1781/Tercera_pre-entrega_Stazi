@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class Usuario(models.Model):
 
     nombre = models.CharField(max_length=200)
@@ -48,12 +47,12 @@ class Pregunta(models.Model):
         return self.texto_pregunta
 
 
-class Choice(models.Model):
+class Opcion(models.Model):
 
     pregunta = models.ForeignKey(Pregunta, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
+    opciones = models.CharField(max_length=200)
     votos = models.IntegerField(default=0)
 
     def __str__(self):
 
-        return self.choice_text
+        return self.opciones

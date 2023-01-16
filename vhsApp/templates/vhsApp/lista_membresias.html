@@ -1,0 +1,12 @@
+{% extends "vhsApp/base.html" %}
+
+{% block subtitulo %}Membresias VHSdigital{% endblock subtitulo %}
+
+{% block contenido %}
+<h1>Membresia VHSdigital</h1>
+<ul>
+{% for membresia in membresias %}
+  <li>{{ membresia.nombre }}, {{ membresia.precio }}, {{ membresia.facturacion }}</li>
+{% endfor %}
+</ul>
+{% endblock contenido %}

@@ -1,0 +1,38 @@
+{% extends "vhsApp/base.html" %}
+
+{% load static %}
+
+{% block contenidoInicio %}
+
+    <h3>Busca un VHSdigital:</h3>
+
+    <form action="/vhsApp/buscar/" method="GET">
+
+        <input type="text" name="video" id="video">
+
+        <input type="submit" value="Buscar">
+
+    </form>
+
+    {% if videos %}
+
+    <p>Estamos buscando: {{video}}</p>
+
+    <ul>
+        {% for video in videos %}
+                <li> {{video.nombre}} </li>
+                <li> {{video.genero}} </li>
+        {% endfor %}
+
+    </ul>
+
+    {% else %}
+
+    <p>No hay datos con esa descripción.</p>
+
+    {% endif %}
+
+    <p style="color: red;">{{respuesta}}</p>
+ 
+
+{% endblock contenidoInicio %}

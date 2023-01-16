@@ -1,0 +1,18 @@
+{% extends "vhsApp/base.html" %}
+
+{% block subtitulo %}Lista de usuarios{% endblock subtitulo %}
+
+{% block estilos %}
+
+{% endblock estilos %}
+
+{% block contenido %}
+{% include "vhsApp/bienvenida.html" %}
+<h1 class="titulos-vhs">Lista de usuarios</h1>
+<ul>
+{% for user in usuarios %}
+  <li>{{ user.apellido }}, {{ user.nombre }}</li>
+{% endfor %}
+</ul>
+{% endblock contenido %}
+ 

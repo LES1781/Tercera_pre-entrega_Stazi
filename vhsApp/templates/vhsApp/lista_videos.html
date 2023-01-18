@@ -1,0 +1,15 @@
+{% extends "vhsApp/base.html" %}
+
+{% load static %}
+
+{% block background %}{% static 'vhsApp/assets/imagen/vhs-cassette.jpg' %}{% endblock %}
+
+{% block contenidoVarios%}
+
+  <h2>FORMULARIO - Ingresar un video</h2>
+
+  <a href="{% url 'crear_videos' %}">Crear</a>
+
+  <br>
+
+{% endblock contenidoVarios %}

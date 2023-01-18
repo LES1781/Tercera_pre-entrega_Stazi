@@ -13,24 +13,19 @@
 
     <h3>Podes buscar un video:</h3>
 
-    <form action="/vhsApp/buscar/" method="GET">
-
-        <input type="text" name="video" id="video">
-
+    <form action="/vhsApp/buscar_videos/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="busqueda">
         <input type="submit" value="Buscar">
-
     </form>
 
     {% if videos %}
-
-    <p>Estamos buscando: {{video}}</p>
 
     <ul>
         {% for video in videos %}
                 <li> {{video.nombre}} </li>
                 <li> {{video.genero}} </li>
         {% endfor %}
-
     </ul>
 
     {% else %}
@@ -40,6 +35,5 @@
     {% endif %}
 
     <p style="color: red;">{{respuesta}}</p>
- 
 
 {% endblock contenidoVarios %}

@@ -5,7 +5,7 @@ class Usuario(models.Model):
 
     nombre = models.CharField(max_length=200)
     apellido = models.CharField(max_length=200)
-    email = models.EmailField(default='')
+    email = models.EmailField(max_length=200)
     miembro_desde = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Video(models.Model):
     genero = models.CharField(max_length=200)
     autor = models.CharField(max_length=200)
     año = models.IntegerField(default=0)
-    descripcion = models.TextField(default='')
+    descripcion = models.TextField(max_length=500)
 
     def __str__(self):
 
@@ -40,7 +40,7 @@ class Membresia(models.Model):
 
 class Solicitar(models.Model):
 
-    solicitud = models.TextField(default='')
+    solicitud = models.TextField(max_length=500)
     fecha = models.DateField(auto_now_add=True)
 
     def __str__(self):

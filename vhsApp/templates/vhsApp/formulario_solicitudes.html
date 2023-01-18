@@ -1,0 +1,15 @@
+{% extends "vhsApp/base.html" %}
+
+{% load static %}
+
+{% block background %}{% static 'vhsApp/assets/imagen/efecto-falla_background.jpg' %}{% endblock %}
+
+{% block contenidoVarios %}
+
+<form action="{% url 'crear_solicitudes' %}" method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  <input type="submit" value="Crear" />
+</form>
+
+{% endblock contenidoVarios %}

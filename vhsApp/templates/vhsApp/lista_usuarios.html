@@ -1,18 +1,15 @@
 {% extends "vhsApp/base.html" %}
 
-{% block subtitulo %}Lista de usuarios{% endblock subtitulo %}
+{% load static %}
 
-{% block estilos %}
+{% block background %}{% static 'vhsApp/assets/imagen/vhs-casetera.jpg' %}{% endblock %}
 
-{% endblock estilos %}
+{% block contenidoVarios%}
 
-{% block contenido %}
-{% include "vhsApp/bienvenida.html" %}
-<h1 class="titulos-vhs">Lista de usuarios</h1>
-<ul>
-{% for user in usuarios %}
-  <li>{{ user.apellido }}, {{ user.nombre }}</li>
-{% endfor %}
-</ul>
-{% endblock contenido %}
- 
+  <h2>FORMULARIO - Ingresar un usuario</h2>
+
+  <a href="{% url 'crear_usuarios' %}">Crear</a>
+
+  <br>
+
+{% endblock contenidoVarios %}

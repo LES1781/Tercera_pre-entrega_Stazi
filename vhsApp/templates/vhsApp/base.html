@@ -10,7 +10,7 @@
         <meta name="author" content="" />
         <title>VHSdigital</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <link rel="icon" type="image/x-icon" href="{% static 'vhsApp/assets/vhs-black.ico' %}" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" 
 rel="stylesheet" type="text/css" />
@@ -18,12 +18,8 @@ rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?
 family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-        <style>
-            {% block estilos %}
-            {% endblock estilos %}
-        </style>
-
+        <link href="{% static 'vhsApp/css/styles.css' %}" rel="stylesheet" />
+    
 
     </head>
 
@@ -32,24 +28,24 @@ family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="te
         <nav class="navbar navbar-light bg-light static-top">
 
             <div class="container">
-                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+                <a class="btn btn-primary" href="{% url 'inicio' %}">INICIO</a>
                 <a class="navbar-brand" href="{% url 'videos' %}">Videos</a>
-                <a class="navbar-brand" href="{% url 'usuarios' %}">Usuarios</a>
-                <a class="navbar-brand" href="{% url 'membresias' %}">Membresias</a>
-                <a class="navbar-brand" href="{% url 'preguntas' %}">Preguntas</a>
-                <a class="btn btn-primary" href="{% url 'inicio' %}">INICIAR</a>
+                <a class="navbar-brand" href="{% url 'listar_usuarios' %}">Usuarios</a>
+                <a class="navbar-brand" href="{% url 'listar_membresias' %}">Membresias</a>
+                <a class="navbar-brand" href="{% url 'listar_solicitudes' %}">Solicitudes</a>
             </div>
 
         </nav>
 
          <!-- Cabecera-->
-         <header class="masthead">
+         <header class="masthead"
+            style="background-image: url('{% block background %}{% endblock %}')">
             <div class="container position-relative">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <div class="text-center text-green">
+                    <div class="col-x2-6">
+                        <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">VHSdigital - Una web para los amantes del cassette. “Build it and they will come”</h1>
+                            <h1 class="mb-5">VHSdigital - Una web para los amantes del cassette.<p></p><p>“Build it and they will come”</p></h1>
                         </div>
                     </div>
                 </div>
@@ -57,13 +53,13 @@ family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="te
         </header>
        
 
-        {% block contenidoInicio %}
+        {% block contenidoVarios %}
 
-        {% endblock contenidoInicio %}
+        {% endblock contenidoVarios %}
 
 
         <!-- Footer-->
-        <footer class="footer bg-light">
+        <footer class="footer bg-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">

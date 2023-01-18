@@ -1,0 +1,40 @@
+{% extends "vhsApp/base.html" %}
+
+{% load static %}
+
+{% block background %}{% static 'vhsApp/assets/imagen/cinta-casete-vhs_background.jpg' %}{% endblock %}
+
+{% block contenidoVarios %}
+
+        <div class="text-left">
+            <img height="40px" src="{{url}}" >
+            <h3>Bienvenido al mundo del VHSdigital</h3>
+        </div>
+
+    <h3>Podes buscar un video:</h3>
+
+    <form action="/vhsApp/cargar_videos/" method="GET">
+
+        <input type="text" name="video" id="video">
+
+        <input type="submit" value="Buscar">
+
+    </form>
+
+    {% if formulario.errors %}
+
+    <p style="color: red;"> Datos incorrectos</p>
+
+    {% endif %}
+
+    <form action="" method="POST">{% csrf_token %}
+
+        <table>
+            {{ formulario.as_table }}
+        </table>
+
+        <input type="submit", value="Enviar">
+
+    </form>
+
+{% endblock %}

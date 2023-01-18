@@ -2,9 +2,16 @@
 
 {% load static %}
 
-{% block contenidoInicio %}
+{% block background %}{% static 'vhsApp/assets/imagen/cinta-video-vintage_background.jpg' %}{% endblock %}
 
-    <h3>Busca un VHSdigital:</h3>
+{% block contenidoVarios %}
+
+        <div class="text-left">
+            <img height="40px" src="{{url}}" >
+            <h3>Bienvenido al mundo del VHSdigital</h3>
+        </div>
+
+    <h3>Podes buscar un video:</h3>
 
     <form action="/vhsApp/buscar/" method="GET">
 
@@ -28,11 +35,11 @@
 
     {% else %}
 
-    <p>No hay datos con esa descripción.</p>
+    <p>No hay datos.</p>
 
     {% endif %}
 
     <p style="color: red;">{{respuesta}}</p>
  
 
-{% endblock contenidoInicio %}
+{% endblock contenidoVarios %}

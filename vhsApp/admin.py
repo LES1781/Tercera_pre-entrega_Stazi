@@ -6,5 +6,4 @@ from .models import *
 admin.site.register(Usuario)
 admin.site.register(Video)
 admin.site.register(Membresia)
-admin.site.register(Pregunta)
-admin.site.register(Opcion)
+admin.site.register(Solicitar)
